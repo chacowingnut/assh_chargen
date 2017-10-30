@@ -1,12 +1,11 @@
 '''
 TODO:
-    [x] Abiltity scores
-    [ ] Class
-    [ ] Alignment
-    [ ] Background
-    [ ] Gear
-    [ ] Secondary stats
+    [ ] Casting/turning ability
+    [ ] Thief talents
     [ ] Spells
+    [ ] Secondary skills
+    [ ] More equipment options
+    [ ] More classes
 '''
 
 
@@ -22,15 +21,18 @@ fighter = {
     'XP': [0, 0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
            128e3, 256e3, 384e3, 512e3, 640e3],
     'features': {
-        'Attack Rate': '1/1 from 1st to 6th level, 3/2 from 7th to 12th',
-        'Heroic Fighting': 'From 1st to 6th, double attacks per round against' +
-                           ' enemies with less than 2 HD. After 7th, applies' +
-                           'for enemies with less than 3 HD.',
-        'Weapon Mastery': 'Choose two weapons. You have +1 to hit and damage ' +
-                          'and increased attack rate. Additional weapons may' +
-                          'be mastered at 4th, 8th and 12th levels',
-        'Grand Mastery': 'At 4th level, gain an additional +1 attack/damage' +
-                         ' with an already mastered weapon.'
+        'Attack Rate': '1/1 from 1st to 6th level, 3/2 from 7th to 12th\n',
+        'Heroic Fighting':
+            'From 1st to 6th, double attacks per round against\n' +
+            'enemies with less than 2 HD. After 7th, applies\n' +
+            'for enemies with less than 3 HD.\n',
+        'Weapon Mastery':
+            'Choose two weapons. You have +1 to hit and damage \n' +
+            'and increased attack rate. Additional weapons may\n' +
+            'be mastered at 4th, 8th and 12th levels\n',
+        'Grand Mastery':
+            'At 4th level, gain an additional +1 attack/damage\n' +
+            'with an already mastered weapon.\n',
     }
 }
 mage = {
@@ -40,16 +42,19 @@ mage = {
     'XP': [0, 0, 2.5e3, 5e3, 10e3, 20e3, 40e3, 80e3,
            160e3, 320e3, 480e3, 640e3, 800e3],
     'features': {
-        'Magician\'s Familiar': 'Summon a small animal (1d3+1 hp). The mage' +
-                                ' can see through its eyes as long as it is ' +
-                                'within 120 ft. If it dies, mage loses 1 hp ' +
-                                ' per level.',
-        'Read Magic': 'Ability to decipher otherwise unintelligible magical ' +
-                      'inscriptions or symbols.',
-        'Scribe Scrolls': 'Ability to inscribe spells upon magical scrolls. ' +
-                          'Rquires 500 gp + 100 gp/spell level.',
-        'Sorcery': 'Ability to cast spells memorized from an arcane tome.',
-        'Alchemy': 'Ability to brew magical potions.'
+        'Magician\'s Familiar':
+            'Summon a small animal (1d3+1 hp). The mage\n' +
+            'can see through its eyes as long as it is\n' +
+            'within 120 ft. If it dies, mage loses 1 hp\n' +
+            'per level.\n',
+        'Read Magic':
+            'Ability to decipher otherwise unintelligible magical\n' +
+            'inscriptions or symbols.\n',
+        'Scribe Scrolls':
+            'Ability to inscribe spells upon magical scrolls.\n' +
+            'Rquires 500 gp + 100 gp/spell level.\n',
+        'Sorcery': 'Ability to cast spells memorized from an arcane tome.\n',
+        'Alchemy': 'Ability to brew magical potions.\n'
     }
 }
 cleric = {
@@ -86,35 +91,35 @@ def Equipage(abilities, cla):
     else:
         dex = 2
     if cla == 'fighter':
-        gear = ('Scale armour, battle axe, shortbow, arrow quiver, ' +
-                'arrows x12, backpack, bandages,soft leather pouch, ' +
-                'hemp rope, large sack, tinderbox, torches x2, ' +
-                'wineskin (full), iron rations.')
+        gear = ['Scale armour', 'battle axe', 'shortbow', 'arrow quiver',
+                'arrows x12', 'backpack', 'bandages', 'soft leather pouch',
+                'hemp rope', 'large sack', 'tinderbox', 'torches x2',
+                'wineskin (full)', 'iron rations']
         ac = 6 - adj
         dr = 1
     elif cla == 'mage':
-        gear = ('Silver dagger, quarterstaff, ' +
-                'sling, bullets x20, backpack, bandages, blanket, chalk, ' +
-                'ink and quill, incendiary oil, parchment x2, soft leather ' +
-                'pouch, silk rope, small sack, tinderbox, torches x3, ' +
-                'wineskin (full), writing stick, standard rations, spell ' +
-                'book.')
+        gear = ['Silver dagger', 'quarterstaff', 'sling', 'bullets x20',
+                'backpack', 'bandages', 'blanket', 'chalk', 'ink and quill',
+                'incendiary oil', 'parchment x2', 'soft leather', 'pouch',
+                'silk rope', 'small sack', 'tinderbox', 'torches x3',
+                'wineskin (full)', 'writing stick', 'standard rations',
+                'spellbook']
         ac = 9 - adj
         dr = 0
     elif cla == 'cleric':
-        gear = ('Studded armour, dagger, war ' +
-                'hammer, backpack, bandages, soft leather pouch, small ' +
-                'sack, tinderbox, torches x3, wineskin (full), writing ' +
-                'stick, iron rations, holy oil / water, silver holy symbol.')
+        gear = ['Studded armour', 'dagger', 'warhammer', 'backpack',
+                'bandages', 'soft leather pouch', 'small sack', 'tinderbox',
+                'torches x3', 'wineskin (full)', 'writing stick',
+                'iron rations', 'holy oil / water', 'silver holy symbol']
         ac = 6 - adj
         dr = 0
     elif cla == 'thief':
-        gear = ('Leather armour, short sword, ' +
-                'darts x2, backpack, bandages, chalk, dice, fishing hooks ' +
-                'x12, fishing string, grappling hook, soft leather pouch, ' +
-                'silk rope, large sack, thieves\' tools, tinderbox, torches ' +
-                'x2, wineskin (full), spool of wire, writing stick, iron ' +
-                'rations.')
+        gear = ['Leather armour', 'short sword', 'darts x2', 'backpack',
+                'bandages', 'chalk', 'dice', 'fishing hooks x12',
+                'fishing string', 'grappling hook', 'soft leather pouch',
+                'silk rope', 'large sack', 'thieves\' tools', 'tinderbox',
+                'torches x2', 'wineskin (full)', 'spool of wire',
+                'writing stick', 'iron rations.']
         ac = 7 - adj
         dr = 0
     else:
@@ -200,8 +205,8 @@ if __name__ == '__main__':
     available = AvailableClasses(abilities)
     choosing_class = True
     while choosing_class:
-        cla = raw_input('\nWhich do you choose?\n>')
-        if cla.lower() not in available:
+        cla = raw_input('\nWhich do you choose?\n>').lower()
+        if cla not in available:
             print 'I am sorry, try again.'
         else:
             print 'Excellent choice, '+cla+'!'
@@ -214,9 +219,27 @@ if __name__ == '__main__':
 
     print ''
     print 'Level', level, cla.upper()
+    print '===================='
     print ''
-    print 'HP:', hp
-    print 'AC:', ac
-    print 'DR:', dr
-    print AbiPrinter(abilities)
+    print 'Abilities and Attributes'
+    print '------------------------'
+    print 'Hit Points:      ', hp
+    print 'Armor Class:     ', ac
+    print 'Damage Reduction:', dr
+    print 'Fighting Ability:', classes[cla]['FA'][level]
+    AbiPrinter(abilities)
     print 'Saving Throw:', str(save)+',', classes[cla]['saves']
+    print ''
+    print 'Gear'
+    print '----'
+    print ', '.join(gear)
+    print ''
+    print 'Class Features:'
+    print '---------------'
+    if type(classes[cla]['features']) is dict:
+        for power in classes[cla]['features'].keys():
+            print '*'+power+'*'
+            print classes[cla]['features'][power]
+    else:
+        for power in classes[cla]['features']:
+            print power
