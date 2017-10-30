@@ -10,41 +10,148 @@ TODO:
 '''
 
 
-from dice_things import AbiRoller
+from dice_things import AbiRoller, d
+
+
+saving_throws = [0, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11]
 
 fighter = {
-    'HD': 'd10',
+    'HD': 10,
     'saves': 'Death +2, Transformation +2',
-    'FA': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    'XP': [0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
+    'FA': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    'XP': [0, 0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
            128e3, 256e3, 384e3, 512e3, 640e3],
     'features': {
         'Attack Rate': '1/1 from 1st to 6th level, 3/2 from 7th to 12th',
         'Heroic Fighting': 'From 1st to 6th, double attacks per round against' +
-                           'enemies with less than 2 HD. After 7th, applies' +
+                           ' enemies with less than 2 HD. After 7th, applies' +
                            'for enemies with less than 3 HD.',
-        'Weapon Mastery': '',
-        'Gand Mastery': '',
+        'Weapon Mastery': 'Choose two weapons. You have +1 to hit and damage ' +
+                          'and increased attack rate. Additional weapons may' +
+                          'be mastered at 4th, 8th and 12th levels',
+        'Grand Mastery': 'At 4th level, gain an additional +1 attack/damage' +
+                         ' with an already mastered weapon.'
     }
 }
+mage = {
+    'HD': 4,
+    'saves': 'Device +2, Sorcery +2',
+    'FA': [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],
+    'XP': [0, 0, 2.5e3, 5e3, 10e3, 20e3, 40e3, 80e3,
+           160e3, 320e3, 480e3, 640e3, 800e3],
+    'features': {
+        'Magician\'s Familiar': 'Summon a small animal (1d3+1 hp). The mage' +
+                                ' can see through its eyes as long as it is ' +
+                                'within 120 ft. If it dies, mage loses 1 hp ' +
+                                ' per level.',
+        'Read Magic': 'Ability to decipher otherwise unintelligible magical ' +
+                      'inscriptions or symbols.',
+        'Scribe Scrolls': 'Ability to inscribe spells upon magical scrolls. ' +
+                          'Rquires 500 gp + 100 gp/spell level.',
+        'Sorcery': 'Ability to cast spells memorized from an arcane tome.',
+        'Alchemy': 'Ability to brew magical potions.'
+    }
+}
+cleric = {
+    'HD': 8,
+    'saves': 'Death +2, Sorcery +2',
+    'FA': [0, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8],
+    'XP': [0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
+           128e3, 256e3, 384e3, 512e3, 640e3],
+    'features': ['Read Scrolls', 'Scribe Scrolls',
+                 'Clerical Sorcery', 'Turn Undead'],
+}
+thief = {
+    'HD': 6,
+    'saves': 'Device +2, Avoidance +2',
+    'FA': [0, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8],
+    'XP': [0, 0, 1.5e3, 3e3, 6e3, 12e3, 24e3, 48e3,
+           96e3, 192e3, 288e3, 384e3, 480e3],
+    'features': ['Agile', 'Backstab', 'Thieves\' Cant', 'Thief Skills']
+}
 
-mage = {}
-cleric = {}
-thief = {}
+classes = {'fighter': fighter, 'mage': mage, 'cleric': cleric, 'thief': thief}
 
-classes = {'fighter': fighter, 'Mage': mage, 'cleric': cleric, 'thief': thief}
+
+def Equipage(abilities, cla):
+    dex = abilities[1]
+    if dex < 4:
+        adj = -2
+    elif dex < 7:
+        adj = -1
+    elif dex < 15:
+        adj = 0
+    elif dex < 18:
+        adj = 1
+    else:
+        dex = 2
+    if cla == 'fighter':
+        gear = ('Scale armour, battle axe, shortbow, arrow quiver, ' +
+                'arrows x12, backpack, bandages,soft leather pouch, ' +
+                'hemp rope, large sack, tinderbox, torches x2, ' +
+                'wineskin (full), iron rations.')
+        ac = 6 - adj
+        dr = 1
+    elif cla == 'mage':
+        gear = ('Silver dagger, quarterstaff, ' +
+                'sling, bullets x20, backpack, bandages, blanket, chalk, ' +
+                'ink and quill, incendiary oil, parchment x2, soft leather ' +
+                'pouch, silk rope, small sack, tinderbox, torches x3, ' +
+                'wineskin (full), writing stick, standard rations, spell ' +
+                'book.')
+        ac = 9 - adj
+        dr = 0
+    elif cla == 'cleric':
+        gear = ('Studded armour, dagger, war ' +
+                'hammer, backpack, bandages, soft leather pouch, small ' +
+                'sack, tinderbox, torches x3, wineskin (full), writing ' +
+                'stick, iron rations, holy oil / water, silver holy symbol.')
+        ac = 6 - adj
+        dr = 0
+    elif cla == 'thief':
+        gear = ('Leather armour, short sword, ' +
+                'darts x2, backpack, bandages, chalk, dice, fishing hooks ' +
+                'x12, fishing string, grappling hook, soft leather pouch, ' +
+                'silk rope, large sack, thieves\' tools, tinderbox, torches ' +
+                'x2, wineskin (full), spool of wire, writing stick, iron ' +
+                'rations.')
+        ac = 7 - adj
+        dr = 0
+    else:
+        print 'Sorry, that class in not valid.'
+
+    return gear, ac, dr
+
+
+def GainHP(abilities, level, hd):
+    hp = 0
+    con = abilities[2]
+    if con < 7:
+        adj = -1
+    elif con < 13:
+        adj = 0
+    elif con < 17:
+        adj = 1
+    elif con < 18:
+        adj = 2
+    else:
+        adj = 3
+    for i in xrange(level):
+        hp += d(hd) + adj
+
+    return hp
 
 
 def AvailableClasses(abilities):
     '''Print the available classes given the indicated ability scores'''
     available = ['Fighter', 'Mage', 'Cleric', 'Thief']
-    if abilities[0] < 10:
+    if abilities[0] < 9:
         available.remove('Fighter')
-    if abilities[3] < 10:
+    if abilities[3] < 9:
         available.remove('Mage')
-    if abilities[4] < 10:
+    if abilities[4] < 9:
         available.remove('Cleric')
-    if abilities[1] < 10:
+    if abilities[1] < 9:
         available.remove('Thief')
 
     print '\nYou are capable of becoming:'
@@ -99,4 +206,17 @@ if __name__ == '__main__':
         else:
             print 'Excellent choice, '+cla+'!'
             choosing_class = False
-    print classes[cla]
+
+    level = int(raw_input('\nAt what level will you start?\n>'))
+    hp = GainHP(abilities, level, classes[cla]['HD'])
+    save = saving_throws[level]
+    gear, ac, dr = Equipage(abilities, cla)
+
+    print ''
+    print 'Level', level, cla.upper()
+    print ''
+    print 'HP:', hp
+    print 'AC:', ac
+    print 'DR:', dr
+    print AbiPrinter(abilities)
+    print 'Saving Throw:', str(save)+',', classes[cla]['saves']
