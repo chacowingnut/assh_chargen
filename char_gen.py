@@ -232,7 +232,10 @@ if __name__ == '__main__':
     print ''
     print 'Gear'
     print '----'
-    print ', '.join(gear)
+    gear_str = ', '.join(gear)
+    for i in range(len(gear_str)/80):
+        print gear_str[i*80:(i+1)*80]
+    print gear_str[(i+1)*80:]
     print ''
     print 'Class Features:'
     print '---------------'
