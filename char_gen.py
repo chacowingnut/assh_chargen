@@ -173,10 +173,11 @@ def AbiPrinter(abilities):
         'Wisdom:       ',
         'Charisma:     ',
     ]
-    print ''
+    output = ''
+    output += ('\n')
     for i in range(6):
-        print labels[i], abilities[i]
-    print ''
+        output += labels[i] + ' ' + str(abilities[i]) + '\n'
+    return output
 
 
 def AbiDialog():
@@ -187,7 +188,7 @@ def AbiDialog():
 
     abilities = AbiRoller(int(raw_input('>')))
 
-    AbiPrinter(abilities)
+    print AbiPrinter(abilities)
 
     return abilities
 
@@ -216,33 +217,34 @@ if __name__ == '__main__':
     hp = GainHP(abilities, level, classes[cla]['HD'])
     save = saving_throws[level]
     gear, ac, dr = Equipage(abilities, cla)
-
-    print ''
-    print 'Level', level, cla.upper()
-    print '===================='
-    print ''
-    print 'Abilities and Attributes'
-    print '------------------------'
-    print 'Hit Points:      ', hp
-    print 'Armor Class:     ', ac
-    print 'Damage Reduction:', dr
-    print 'Fighting Ability:', classes[cla]['FA'][level]
-    AbiPrinter(abilities)
-    print 'Saving Throw:', str(save)+',', classes[cla]['saves']
-    print ''
-    print 'Gear'
-    print '----'
     gear_str = ', '.join(gear)
-    for i in range(len(gear_str)/80):
-        print gear_str[i*80:(i+1)*80]
-    print gear_str[(i+1)*80:]
-    print ''
-    print 'Class Features:'
-    print '---------------'
-    if type(classes[cla]['features']) is dict:
-        for power in classes[cla]['features'].keys():
-            print '*'+power+'*'
-            print classes[cla]['features'][power]
-    else:
-        for power in classes[cla]['features']:
-            print power
+
+    with open('unnamed_hero.txt', 'w') as f:
+        print >> f, ''
+        print >> f, 'Level', level, cla.upper()
+        print >> f, '===================='
+        print >> f, ''
+        print >> f, 'Abilities and Attributes'
+        print >> f, '------------------------'
+        print >> f, 'Hit Points:      ', hp
+        print >> f, 'Armor Class:     ', ac
+        print >> f, 'Damage Reduction:', dr
+        print >> f, 'Fighting Ability:', classes[cla]['FA'][level]
+        print >> f, AbiPrinter(abilities)
+        print >> f, 'Saving Throw:', str(save)+',', classes[cla]['saves']
+        print >> f, ''
+        print >> f, 'Gear'
+        print >> f, '----'
+        for i in range(len(gear_str)/80):
+            print >> f, gear_str[i*80:(i+1)*80]
+        print >> f, gear_str[(i+1)*80:]
+        print >> f, ''
+        print >> f, 'Class Features:'
+        print >> f, '---------------'
+        if type(classes[cla]['features']) is dict:
+            for power in classes[cla]['features'].keys():
+                print >> f, '*'+power+'*'
+                print >> f, classes[cla]['features'][power]
+        else:
+            for power in classes[cla]['features']:
+                print >> f, power

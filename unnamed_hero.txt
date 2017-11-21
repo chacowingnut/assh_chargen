@@ -1,0 +1,49 @@
+
+Level 1 MAGE
+====================
+
+Abilities and Attributes
+------------------------
+Hit Points:       3
+Armor Class:      10
+Damage Reduction: 0
+Fighting Ability: 0
+
+Strength:      11
+Dexterity:     4
+Constitution:  14
+Intelligence:  12
+Wisdom:        9
+Charisma:      12
+
+Saving Throw: 16, Device +2, Sorcery +2
+
+Gear
+----
+Silver dagger, quarterstaff, sling, bullets x20, backpack, bandages, blanket, ch
+alk, ink and quill, incendiary oil, parchment x2, soft leather, pouch, silk rope
+, small sack, tinderbox, torches x3, wineskin (full), writing stick, standard ra
+tions, spellbook
+
+Class Features:
+---------------
+*Alchemy*
+Ability to brew magical potions.
+
+*Sorcery*
+Ability to cast spells memorized from an arcane tome.
+
+*Magician's Familiar*
+Summon a small animal (1d3+1 hp). The mage
+can see through its eyes as long as it is
+within 120 ft. If it dies, mage loses 1 hp
+per level.
+
+*Scribe Scrolls*
+Ability to inscribe spells upon magical scrolls.
+Rquires 500 gp + 100 gp/spell level.
+
+*Read Magic*
+Ability to decipher otherwise unintelligible magical
+inscriptions or symbols.
+
