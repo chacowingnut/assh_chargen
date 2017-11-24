@@ -1,11 +1,9 @@
 '''
 TODO:
-    [ ] Casting/turning ability
-    [ ] Thief talents
-    [ ] Spells
-    [ ] Secondary skills
-    [ ] More equipment options
-    [ ] More classes
+[ ] Flesh out abilitiy descriptions
+[ ] Thief talents
+[ ] Spells
+[ ] More equipment options
 '''
 
 
@@ -76,6 +74,24 @@ thief = {
 }
 
 classes = {'fighter': fighter, 'mage': mage, 'cleric': cleric, 'thief': thief}
+
+
+def SecondarySkills():
+    skills = ['animal trainer', 'armorer', 'cook', 'barber', 'inkeeper',
+              'blacksmith', 'shipwright', 'bookbinder', 'bowyer',
+              'brewer', 'vintner', 'butcher', 'carpenter', 'cartwright',
+              'chandler', 'peatman', 'clothier', 'cobbler', 'cooper',
+              'engineer', 'farmer', 'fisherman', 'furrier', 'glazier',
+              'jailer', 'gardener', 'jeweller', 'grocer', 'guard',
+              'herdsman', 'hunter', 'tanner', 'painter', 'sculptor',
+              'messenger', 'locksmith', 'logger', 'mason', 'merchant',
+              'miller', 'miner', 'minstrel', 'mortician', 'navigator',
+              'potter', 'riverman', 'thatcher', 'roper', 'sailor', 
+              'scribe', 'soldier', 'stabler', 'weaponsmith', 'tailor',
+              'teamster', 'tinker']
+    number_of_skills = len(skills)
+    index = d(number_of_skills)
+    return skills[index]
 
 
 def Equipage(abilities, cla):
@@ -232,6 +248,7 @@ if __name__ == '__main__':
         print >> f, 'Fighting Ability:', classes[cla]['FA'][level]
         print >> f, AbiPrinter(abilities)
         print >> f, 'Saving Throw:', str(save)+',', classes[cla]['saves']
+        print >> f, 'Background skill:', SecondarySkills()
         print >> f, ''
         print >> f, 'Gear'
         print >> f, '----'
