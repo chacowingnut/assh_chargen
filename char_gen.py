@@ -77,18 +77,18 @@ classes = {'fighter': fighter, 'mage': mage, 'cleric': cleric, 'thief': thief}
 
 
 def SecondarySkills():
-    skills = ['animal trainer', 'armorer', 'cook', 'barber', 'inkeeper',
-              'blacksmith', 'shipwright', 'bookbinder', 'bowyer',
-              'brewer', 'vintner', 'butcher', 'carpenter', 'cartwright',
-              'chandler', 'peatman', 'clothier', 'cobbler', 'cooper',
-              'engineer', 'farmer', 'fisherman', 'furrier', 'glazier',
-              'jailer', 'gardener', 'jeweller', 'grocer', 'guard',
-              'herdsman', 'hunter', 'tanner', 'painter', 'sculptor',
-              'messenger', 'locksmith', 'logger', 'mason', 'merchant',
-              'miller', 'miner', 'minstrel', 'mortician', 'navigator',
-              'potter', 'riverman', 'thatcher', 'roper', 'sailor', 
-              'scribe', 'soldier', 'stabler', 'weaponsmith', 'tailor',
-              'teamster', 'tinker']
+    skills = ['Animal Trainer', 'Armorer', 'Cook', 'Barber', 'Inkeeper',
+              'Blacksmith', 'Shipwright', 'Bookbinder', 'Bowyer',
+              'Brewer', 'Vintner', 'Butcher', 'Carpenter', 'Cartwright',
+              'Chandler', 'Peatman', 'Clothier', 'Cobbler', 'Cooper',
+              'Engineer', 'Farmer', 'Fisherman', 'Furrier', 'Glazier',
+              'Jailer', 'Gardener', 'Jeweller', 'Grocer', 'Guard',
+              'Herdsman', 'Hunter', 'Tanner', 'Painter', 'Sculptor',
+              'Messenger', 'Locksmith', 'Logger', 'Mason', 'Merchant',
+              'Miller', 'Miner', 'Minstrel', 'Mortician', 'Navigator',
+              'Potter', 'Riverman', 'Thatcher', 'Roper', 'Sailor', 
+              'Scribe', 'Soldier', 'Stabler', 'Weaponsmith', 'Tailor',
+              'Teamster', 'Tinker']
     number_of_skills = len(skills)
     index = d(number_of_skills)
     return skills[index]
@@ -107,35 +107,29 @@ def Equipage(abilities, cla):
     else:
         dex = 2
     if cla == 'fighter':
-        gear = ['Scale armour', 'battle axe', 'shortbow', 'arrow quiver',
-                'arrows x12', 'backpack', 'bandages', 'soft leather pouch',
-                'hemp rope', 'large sack', 'tinderbox', 'torches x2',
-                'wineskin (full)', 'iron rations']
+        gear = '''Scale armour, battle axe, shortbow, arrow quiver, arrows x12,
+backpack, bandages, soft leather pouch, hemp rope, large sack,
+tinderbox, torches x2, wineskin (full), iron rations'''
         ac = 6 - adj
         dr = 1
     elif cla == 'mage':
-        gear = ['Silver dagger', 'quarterstaff', 'sling', 'bullets x20',
-                'backpack', 'bandages', 'blanket', 'chalk', 'ink and quill',
-                'incendiary oil', 'parchment x2', 'soft leather', 'pouch',
-                'silk rope', 'small sack', 'tinderbox', 'torches x3',
-                'wineskin (full)', 'writing stick', 'standard rations',
-                'spellbook']
+        gear = '''Silver dagger, quarterstaff, sling, bullets x20, backpack,
+bandages, blanket, chalk, ink and quill, incendiary oil, parchment x2, 
+soft leather pouch, silk rope, small sack, tinderbox, torches x3, 
+wineskin (full), writing stick, standard rations, spellbook'''
         ac = 9 - adj
         dr = 0
     elif cla == 'cleric':
-        gear = ['Studded armour', 'dagger', 'warhammer', 'backpack',
-                'bandages', 'soft leather pouch', 'small sack', 'tinderbox',
-                'torches x3', 'wineskin (full)', 'writing stick',
-                'iron rations', 'holy oil / water', 'silver holy symbol']
+        gear = '''Studded armour, dagger, warhammer, backpack, bandages, 
+soft leather pouch, small sack, tinderbox, torches x3, wineskin (full), 
+writing stick, iron rations, holy oil / water, silver holy symbol'''
         ac = 6 - adj
         dr = 0
     elif cla == 'thief':
-        gear = ['Leather armour', 'short sword', 'darts x2', 'backpack',
-                'bandages', 'chalk', 'dice', 'fishing hooks x12',
-                'fishing string', 'grappling hook', 'soft leather pouch',
-                'silk rope', 'large sack', 'thieves\' tools', 'tinderbox',
-                'torches x2', 'wineskin (full)', 'spool of wire',
-                'writing stick', 'iron rations.']
+        gear = '''Leather armour, short sword, darts x2, backpack,bandages,
+chalk, dice, fishing hooks x12, fishing string, grappling hook, soft leather 
+pouch, silk rope, large sack, thieves\' tools, tinderbox, torches x2, 
+wineskin (full), spool of wire, writing stick, iron rations.'''
         ac = 7 - adj
         dr = 0
     else:
@@ -233,7 +227,6 @@ if __name__ == '__main__':
     hp = GainHP(abilities, level, classes[cla]['HD'])
     save = saving_throws[level]
     gear, ac, dr = Equipage(abilities, cla)
-    gear_str = ', '.join(gear)
 
     with open('unnamed_hero.txt', 'w') as f:
         print >> f, ''
@@ -252,9 +245,7 @@ if __name__ == '__main__':
         print >> f, ''
         print >> f, 'Gear'
         print >> f, '----'
-        for i in range(len(gear_str)/80):
-            print >> f, gear_str[i*80:(i+1)*80]
-        print >> f, gear_str[(i+1)*80:]
+        print >> f, gear
         print >> f, ''
         print >> f, 'Class Features:'
         print >> f, '---------------'
