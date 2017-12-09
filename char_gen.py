@@ -1,7 +1,7 @@
 '''
 TODO:
-[ ] Flesh out abilitiy descriptions
-[ ] Thief talents
+[X] Flesh out abilitiy descriptions
+[X] Thief talents
 [ ] Spells
 [ ] More equipment options
 '''
@@ -61,8 +61,14 @@ cleric = {
     'FA': [0, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8],
     'XP': [0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
            128e3, 256e3, 384e3, 512e3, 640e3],
-    'features': ['Read Scrolls', 'Scribe Scrolls',
-                 'Clerical Sorcery', 'Turn Undead'],
+    'features': {
+        'Read Scrolls': 'You can invoke cleric spells from scrolls.\n', 
+        'Scribe Scrolls': 
+            'You can write magical scrolls at a cost of 500 gp\n' +
+            '100 gp per spell level\n',
+        'Clerical Sorcery': 'Ability to cast clerical spells.\n',
+        'Turn Undead': 'Exert control over undead or demonic beings.\n',
+    }
 }
 thief = {
     'HD': 6,
@@ -70,7 +76,17 @@ thief = {
     'FA': [0, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8],
     'XP': [0, 0, 1.5e3, 3e3, 6e3, 12e3, 24e3, 48e3,
            96e3, 192e3, 288e3, 384e3, 480e3],
-    'features': ['Agile', 'Backstab', 'Thieves\' Cant', 'Thief Skills']
+    'features': {
+        'Agile':
+            '-1 AC when unarmoured and unencumbered.\n',
+        'Backstab':
+            'An attack from behind with small melee weapon has a\n' +
+            'bonus to hit chance and damage.\n',
+        'Thieves\' Cant':
+            'You speak the secret language of criminals.\n',
+        'Thief Skills': 
+            'Check out the table. There\'s some straight up ninja shit.\n',
+    }
 }
 
 classes = {'fighter': fighter, 'mage': mage, 'cleric': cleric, 'thief': thief}

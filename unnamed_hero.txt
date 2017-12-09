@@ -1,50 +1,42 @@
 
-Level 1 MAGE
+Level 1 CLERIC
 ====================
 
 Abilities and Attributes
 ------------------------
-Hit Points:       2
-Armor Class:      9
+Hit Points:       4
+Armor Class:      6
 Damage Reduction: 0
-Fighting Ability: 0
+Fighting Ability: 1
 
-Strength:      11
+Strength:      10
 Dexterity:     10
-Constitution:  11
-Intelligence:  13
-Wisdom:        8
-Charisma:      11
+Constitution:  8
+Intelligence:  10
+Wisdom:        13
+Charisma:      14
 
-Saving Throw: 16, Device +2, Sorcery +2
-Background skill: Fisherman
+Saving Throw: 16, Death +2, Sorcery +2
+Background skill: Cooper
 
 Gear
 ----
-Silver dagger, quarterstaff, sling, bullets x20, backpack,
-bandages, blanket, chalk, ink and quill, incendiary oil, parchment x2, 
-soft leather pouch, silk rope, small sack, tinderbox, torches x3, 
-wineskin (full), writing stick, standard rations, spellbook
+Studded armour, dagger, warhammer, backpack, bandages, 
+soft leather pouch, small sack, tinderbox, torches x3, wineskin (full), 
+writing stick, iron rations, holy oil / water, silver holy symbol
 
 Class Features:
 ---------------
-*Alchemy*
-Ability to brew magical potions.
+*Read Scrolls*
+You can invoke cleric spells from scrolls.
 
-*Sorcery*
-Ability to cast spells memorized from an arcane tome.
+*Turn Undead*
+Exert control over undead or demonic beings.
 
-*Magician's Familiar*
-Summon a small animal (1d3+1 hp). The mage
-can see through its eyes as long as it is
-within 120 ft. If it dies, mage loses 1 hp
-per level.
+*Clerical Sorcery*
+Ability to cast clerical spells.
 
 *Scribe Scrolls*
-Ability to inscribe spells upon magical scrolls.
-Rquires 500 gp + 100 gp/spell level.
-
-*Read Magic*
-Ability to decipher otherwise unintelligible magical
-inscriptions or symbols.
+You can write magical scrolls at a cost of 500 gp
+100 gp per spell level
 
