@@ -2,4 +2,4 @@
 
 Character generation tool for [ASSH rpg](http://www.hyperborea.tv/)
 
-This tool is not an official product of North Wind Adventures
+This software is not an official product of North Wind Adventures.
