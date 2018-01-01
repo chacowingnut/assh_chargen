@@ -1,42 +1,43 @@
 
-Level 1 CLERIC
+Level 3 THIEF
 ====================
 
 Abilities and Attributes
 ------------------------
-Hit Points:       4
-Armor Class:      6
+Hit Points:       17
+Armor Class:      7
 Damage Reduction: 0
-Fighting Ability: 1
+Fighting Ability: 2
 
-Strength:      10
-Dexterity:     10
-Constitution:  8
-Intelligence:  10
-Wisdom:        13
-Charisma:      14
+Strength:      8
+Dexterity:     11
+Constitution:  11
+Intelligence:  11
+Wisdom:        8
+Charisma:      8
 
-Saving Throw: 16, Death +2, Sorcery +2
-Background skill: Cooper
+Saving Throw: 15, Device +2, Avoidance +2
+Background skill: Tinker
 
 Gear
 ----
-Studded armour, dagger, warhammer, backpack, bandages, 
-soft leather pouch, small sack, tinderbox, torches x3, wineskin (full), 
-writing stick, iron rations, holy oil / water, silver holy symbol
+Leather armour, short sword, darts x2, backpack,bandages,
+chalk, dice, fishing hooks x12, fishing string, grappling hook, soft leather 
+pouch, silk rope, large sack, thieves' tools, tinderbox, torches x2, 
+wineskin (full), spool of wire, writing stick, iron rations.
 
 Class Features:
 ---------------
-*Read Scrolls*
-You can invoke cleric spells from scrolls.
+*Agile*
+-1 AC when unarmoured and unencumbered.
 
-*Turn Undead*
-Exert control over undead or demonic beings.
+*Thief Skills*
+Check out the table. There's some straight up ninja shit.
 
-*Clerical Sorcery*
-Ability to cast clerical spells.
+*Backstab*
+An attack from behind with small melee weapon has a
+bonus to hit chance and damage.
 
-*Scribe Scrolls*
-You can write magical scrolls at a cost of 500 gp
-100 gp per spell level
+*Thieves' Cant*
+You speak the secret language of criminals.
 

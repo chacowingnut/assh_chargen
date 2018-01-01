@@ -2,7 +2,7 @@
 TODO:
 [X] Flesh out abilitiy descriptions
 [X] Thief talents
-[ ] Spells
+[ ] Spells!!!
 [ ] More equipment options
 '''
 
@@ -272,3 +272,4 @@ if __name__ == '__main__':
         else:
             for power in classes[cla]['features']:
                 print >> f, power
+    print open('unnamed_hero.txt', 'r').read()
