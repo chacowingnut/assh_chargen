@@ -4,27 +4,26 @@ Level 3 THIEF
 
 Abilities and Attributes
 ------------------------
-Hit Points:       17
-Armor Class:      7
+Hit Points:       7
+Armor Class:      6
 Damage Reduction: 0
 Fighting Ability: 2
 
-Strength:      8
-Dexterity:     11
+Strength:      11
+Dexterity:     10
 Constitution:  11
-Intelligence:  11
-Wisdom:        8
-Charisma:      8
+Intelligence:  10
+Wisdom:        5
+Charisma:      10
 
 Saving Throw: 15, Device +2, Avoidance +2
-Background skill: Tinker
+Background skill: Cooper
 
 Gear
 ----
-Leather armour, short sword, darts x2, backpack,bandages,
-chalk, dice, fishing hooks x12, fishing string, grappling hook, soft leather 
-pouch, silk rope, large sack, thieves' tools, tinderbox, torches x2, 
-wineskin (full), spool of wire, writing stick, iron rations.
+studded leather, short sword, light crossbow (w/20 bolts), torches
+(x3), backpack, wineskin, bandages, tinderbox, trail rations (1 week),
+9 gp, horn, collapsable 10-ft pole, dice
 
 Class Features:
 ---------------

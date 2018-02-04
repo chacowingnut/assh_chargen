@@ -2,12 +2,18 @@
 TODO:
 [X] Flesh out abilitiy descriptions
 [X] Thief talents
+[X] More equipment options
+[ ] Improve special ability printing
 [ ] Spells!!!
-[ ] More equipment options
+[ ] Races
+[ ] XP bonus
+[ ] Attribute score modifiers
 '''
 
 
 from dice_things import AbiRoller, d
+from random import choice
+import textwrap
 
 
 saving_throws = [0, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11]
@@ -62,8 +68,8 @@ cleric = {
     'XP': [0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
            128e3, 256e3, 384e3, 512e3, 640e3],
     'features': {
-        'Read Scrolls': 'You can invoke cleric spells from scrolls.\n', 
-        'Scribe Scrolls': 
+        'Read Scrolls': 'You can invoke cleric spells from scrolls.\n',
+        'Scribe Scrolls':
             'You can write magical scrolls at a cost of 500 gp\n' +
             '100 gp per spell level\n',
         'Clerical Sorcery': 'Ability to cast clerical spells.\n',
@@ -84,7 +90,7 @@ thief = {
             'bonus to hit chance and damage.\n',
         'Thieves\' Cant':
             'You speak the secret language of criminals.\n',
-        'Thief Skills': 
+        'Thief Skills':
             'Check out the table. There\'s some straight up ninja shit.\n',
     }
 }
@@ -102,7 +108,7 @@ def SecondarySkills():
               'Herdsman', 'Hunter', 'Tanner', 'Painter', 'Sculptor',
               'Messenger', 'Locksmith', 'Logger', 'Mason', 'Merchant',
               'Miller', 'Miner', 'Minstrel', 'Mortician', 'Navigator',
-              'Potter', 'Riverman', 'Thatcher', 'Roper', 'Sailor', 
+              'Potter', 'Riverman', 'Thatcher', 'Roper', 'Sailor',
               'Scribe', 'Soldier', 'Stabler', 'Weaponsmith', 'Tailor',
               'Teamster', 'Tinker']
     number_of_skills = len(skills)
@@ -122,34 +128,68 @@ def Equipage(abilities, cla):
         adj = 1
     else:
         dex = 2
+
+    armors = ['none', 'padded', 'leather', 'studded leather', 'scale',
+              'chain mail', 'laminated', 'banded mail', 'splint', 'plate mail',
+              'field mail', 'full plate']
+    ac_array = [9, 8, 7, 6, 6, 5, 5, 4, 4, 3, 2, 1]
+    dr_array = [0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2]
+
+    light = ['torches (x3)', 'lamp (w/full flask of oil)']
+    randos = ['chalk', 'ink and quill', 'hemp rope', 'incendiary oil', 'dice',
+              'fishing net', 'glue', 'grappling hook', 'horn', 'marbles',
+              'mirror', 'hammer and nails', 'needle and thread', 'crowbar',
+              'collapsable 10-ft pole', 'soap', 'wooden stakes (x4)',
+              'spool of wire', 'block of beeswax', 'mask']
+    standard = ['backpack', 'wineskin', 'bandages', 'tinderbox',
+                'trail rations (1 week)', str(d(10)+d(10))+' gp']
+
     if cla == 'fighter':
-        gear = '''Scale armour, battle axe, shortbow, arrow quiver, arrows x12,
-backpack, bandages, soft leather pouch, hemp rope, large sack,
-tinderbox, torches x2, wineskin (full), iron rations'''
-        ac = 6 - adj
-        dr = 1
+        armor = choice(armors[2:])
+        weapon = choice(['warhammer', 'footman\'s mace', 'morning star',
+                         'war pick', 'longsword', 'flail', 'bastard sword',
+                         'great axe', 'halberd', 'great hammer', 'spear',
+                         'scimitar', 'two-handed sword', 'pike'])
+        missile = choice(['bola', 'sling', 'longbow (w/20 arrows)',
+                          'composite bow (w/20 arrows)',
+                          'shortbow (w/20 arrows)',
+                          'light crossbow (w/20 bolts)',
+                          'heavy crossbow (w/20 bolts)'])
     elif cla == 'mage':
-        gear = '''Silver dagger, quarterstaff, sling, bullets x20, backpack,
-bandages, blanket, chalk, ink and quill, incendiary oil, parchment x2, 
-soft leather pouch, silk rope, small sack, tinderbox, torches x3, 
-wineskin (full), writing stick, standard rations, spellbook'''
-        ac = 9 - adj
-        dr = 0
+        armor = 'none'
+        weapon = choice(['dagger', 'quarterstaff'])
+        missile = choice(['sling', 'darts'])
     elif cla == 'cleric':
-        gear = '''Studded armour, dagger, warhammer, backpack, bandages, 
-soft leather pouch, small sack, tinderbox, torches x3, wineskin (full), 
-writing stick, iron rations, holy oil / water, silver holy symbol'''
-        ac = 6 - adj
-        dr = 0
+        armor = choice(armors[2:])
+        weapon = choice(['warhammer', 'footman\'s mace', 'morning star',
+                         'war pick', 'longsword', 'flail', 'bastard sword',
+                         'great axe', 'halberd', 'great hammer', 'spear',
+                         'scimitar', 'pike'])
+        missile = choice(['bola', 'sling',
+                          'light crossbow (w/20 bolts)',
+                          'heavy crossbow (w/20 bolts)'])
     elif cla == 'thief':
-        gear = '''Leather armour, short sword, darts x2, backpack,bandages,
-chalk, dice, fishing hooks x12, fishing string, grappling hook, soft leather 
-pouch, silk rope, large sack, thieves\' tools, tinderbox, torches x2, 
-wineskin (full), spool of wire, writing stick, iron rations.'''
-        ac = 7 - adj
-        dr = 0
+        armor = choice(armors[:4])
+        weapon = choice(['dagger', 'longsword', 'short sword', 'falcata',
+                         'war pick', 'flail', 'light mace', 'light hammer',
+                         'scimitar'])
+        missile = choice(['sling', 'darts',
+                          'composite bow (w/20 arrows)',
+                          'shortbow (w/20 arrows)',
+                          'light crossbow (w/20 bolts)'])
     else:
         print 'Sorry, that class in not valid.'
+
+    gear = [armor, weapon, missile, choice(light)] + standard
+
+    for i in range(3):
+        doohickey = choice(randos)
+        gear.append(doohickey)
+        randos.remove(doohickey)
+
+    gear = ', '.join(gear)
+    ac = ac_array[armors.index(armor)] - adj
+    dr = dr_array[armors.index(armor)]
 
     return gear, ac, dr
 
@@ -261,7 +301,7 @@ if __name__ == '__main__':
         print >> f, ''
         print >> f, 'Gear'
         print >> f, '----'
-        print >> f, gear
+        print >> f, textwrap.fill(gear)
         print >> f, ''
         print >> f, 'Class Features:'
         print >> f, '---------------'
