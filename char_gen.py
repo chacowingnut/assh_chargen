@@ -3,8 +3,9 @@ TODO:
 [X] Flesh out abilitiy descriptions
 [X] Thief talents
 [X] More equipment options
-[ ] Improve special ability printing
-[ ] Spells!!!
+[X] Mage spells!!!
+[ ] Cleric spells
+[ ] Improve class feature printing
 [ ] Races
 [ ] XP bonus
 [ ] Attribute score modifiers
@@ -187,6 +188,8 @@ def Equipage(abilities, cla):
         gear.append(doohickey)
         randos.remove(doohickey)
 
+    if 'none' in gear:
+        gear.remove('none')
     gear = ', '.join(gear)
     ac = ac_array[armors.index(armor)] - adj
     dr = dr_array[armors.index(armor)]
@@ -259,6 +262,76 @@ def AbiDialog():
     return abilities
 
 
+def MageSpells(level):
+    level1 = ['Alarm', 'Burning Hands', 'Charm Person', 'Dancing Lights',
+              'Dash', 'Decipher Language', 'Detect Magic', 'Enlargement',
+              'Feather Fall', 'Floating Disc', 'Friends', 'Grease',
+              'Hold Portal', 'Identify', 'Influence Normal Fire', 'Jump',
+              'Light', 'Magic Missile', 'Melt Ice', 'Mending', 'Message',
+              'Mount', 'Protection from Evil/Good', 'Shield',
+              'Shocking Grasp', 'Shove', 'Sleep', 'Sorcerer Mask',
+              'Sorcerous Armor', 'Spider Climb', 'Unseen Servant',
+              'Ventriloquism', 'Write Spell']
+    level2 = ['Acid Arrow', 'Auditory Glamour', 'Continuous Light',
+              'Cool Metal', 'Darkness', 'Detect Evil',
+              'Detect Illusion', 'Detect Invisibility', 'Detect Silence',
+              'Extra-dimensional Pocket', 'Extrasensory Perception',
+              'Flaming Sphere', 'Fool\'s Gold', 'Glitterdust',
+              'Gust of Wind', 'Invisibility', 'Knock', 'Levitate',
+              'Locate Object', 'Magic Mouth', 'Mind Blank', 'Mirror Image',
+              'Pyrotechnics', 'Ray of Enfeeblement', 'Scare', 'Shatter',
+              'Sorcerer Lock', 'Stinking Cloud', 'Strengthen',
+              'Summon Daemon I', 'Ungovernable Hideous Laughter',
+              'Wall of Shadow', 'Web']
+    level3 = ['Black Cloud', 'Blink', 'Cataleptic State', 'Clairaudience',
+              'Clairvoyance', 'Dispel Magic', 'Explosive Runes', 'Fireball',
+              'Flame Arrow', 'Fly', 'Haste', 'Hold Person', 'Infrared Vision',
+              'Invisibility Hemisphere', 'Lightning Bolt', 'Phantasm',
+              'Protection from Evil/Good 15 ft. r',
+              'Protection from Ordinary Missiles', 'Rope Trick', 'Secret Page',
+              'Sepia Snake Sigil', 'Shadow Sending', 'Slow', 'Suggestion',
+              'Summon Monster I', 'Tiny Hut', 'Tongues', 'Twofold Missile',
+              'Water Breathing', 'Wind Wall']
+    level4 = ['Black Tentacles', 'Charm Monster', 'Confusion', 'Dig Hole',
+              'Dimension Door', 'Dweomered Weapon', 'Extend Spell I', 'Fear',
+              'Fire Shield', 'Fire Trap', 'Globe of Lesser Invulnerability',
+              'Hallucinatory Terrain', 'Ice Javelin', 'Ice Storm',
+              'Mass Treemorph', 'Mirror, Mirron', 'Mneumonic Enhancer',
+              'Plant Growth', 'Polymorph Other', 'Polymorph Self',
+              'Remove Curse', 'Resilient Sphere', 'Secure Shelter', 'Shout',
+              'Sorcerer Eye', 'Stoneskin', 'Summon Daemon II',
+              'Summon Monster II', 'Wall of Fire', 'Wall of Ice']
+    level5 = ['Air-like Water', 'Animate Dead', 'Cloudkill', 'Cone of Cold',
+              'Contact Otherworldly Being', 'Dismissal', 'Extend Spell II',
+              'Fabricate', 'Faithful Hound', 'Feeblemind', 'Hold Monster',
+              'Interposing Hand', 'Magic Jar', 'Passwall', 'Secret Chest',
+              'Sending', 'Stone Shape', 'Summon Elemental',
+              'Summon Monster III', 'Telekinesis', 'Teleport',
+              'Transmute Rock to Mud', 'Wall of Force', 'Wall of Iron',
+              'Wall of Stone']
+    level6 = ['Anti-Magic Field', 'Chain Lightning', 'Control Water',
+              'Control Weather', 'Controlled Blast Fireball', 'Death',
+              'Disintegrate', 'Extend Spell III', 'Forceful Hand',
+              'Freezing Sphere', 'Geas', 'Globe of Greater Invulnerability',
+              'Guards and Wards', 'Legend Lore', 'Move Earth', 'Project Image',
+              'Reincarnation', 'Repulsion', 'Stone to Flesh',
+              'Summon Daemon III', 'Summon Invisible Stalker',
+              'Summon Monster IV', 'Transformation']
+    spell_catalog = [level1, level2, level3, level4, level5, level6]
+    max_spell_progression = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]
+    max_spell_level = max_spell_progression[level - 1]
+    spells = []
+    for i in range(3):
+        new_spell = choice(level1)
+        spells.append(new_spell)
+        level1.remove(new_spell)
+    for j in range(max_spell_level):
+        new_spell = choice(spell_catalog[j])
+        spells.append(new_spell)
+        spell_catalog[j].remove(new_spell)
+    return ', '.join(spells)
+
+
 if __name__ == '__main__':
     print '\nWelcome to ASSHtonishing PC Generation! \n'
 
@@ -312,4 +385,9 @@ if __name__ == '__main__':
         else:
             for power in classes[cla]['features']:
                 print >> f, power
+        if cla == 'mage':
+            print >> f, 'Spells:'
+            print >> f, '-------'
+            spells = MageSpells(level)
+            print >> f, textwrap.fill(spells)
     print open('unnamed_hero.txt', 'r').read()

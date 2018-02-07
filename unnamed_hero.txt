@@ -1,42 +1,52 @@
 
-Level 3 THIEF
+Level 6 MAGE
 ====================
 
 Abilities and Attributes
 ------------------------
-Hit Points:       7
-Armor Class:      6
+Hit Points:       29
+Armor Class:      9
 Damage Reduction: 0
 Fighting Ability: 2
 
-Strength:      11
-Dexterity:     10
-Constitution:  11
-Intelligence:  10
-Wisdom:        5
-Charisma:      10
+Strength:      16
+Dexterity:     13
+Constitution:  17
+Intelligence:  18
+Wisdom:        11
+Charisma:      14
 
-Saving Throw: 15, Device +2, Avoidance +2
-Background skill: Cooper
+Saving Throw: 14, Device +2, Sorcery +2
+Background skill: Fisherman
 
 Gear
 ----
-studded leather, short sword, light crossbow (w/20 bolts), torches
-(x3), backpack, wineskin, bandages, tinderbox, trail rations (1 week),
-9 gp, horn, collapsable 10-ft pole, dice
+dagger, darts, torches (x3), backpack, wineskin, bandages, tinderbox,
+trail rations (1 week), 8 gp, spool of wire, crowbar, mask
 
 Class Features:
 ---------------
-*Agile*
--1 AC when unarmoured and unencumbered.
+*Alchemy*
+Ability to brew magical potions.
 
-*Thief Skills*
-Check out the table. There's some straight up ninja shit.
+*Sorcery*
+Ability to cast spells memorized from an arcane tome.
 
-*Backstab*
-An attack from behind with small melee weapon has a
-bonus to hit chance and damage.
+*Magician's Familiar*
+Summon a small animal (1d3+1 hp). The mage
+can see through its eyes as long as it is
+within 120 ft. If it dies, mage loses 1 hp
+per level.
 
-*Thieves' Cant*
-You speak the secret language of criminals.
+*Scribe Scrolls*
+Ability to inscribe spells upon magical scrolls.
+Rquires 500 gp + 100 gp/spell level.
 
+*Read Magic*
+Ability to decipher otherwise unintelligible magical
+inscriptions or symbols.
+
+Spells:
+-------
+Hold Portal, Friends, Shove, Message, Stinking Cloud, Protection from
+Ordinary Missiles
