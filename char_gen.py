@@ -4,11 +4,12 @@ TODO:
 [X] Thief talents
 [X] More equipment options
 [X] Mage spells!!!
-[ ] Cleric spells
-[ ] Improve class feature printing
+[X] Cleric spells
+[X] Improve class feature printing
 [ ] Races
-[ ] XP bonus
+[X] XP bonus
 [ ] Attribute score modifiers
+[ ] Add more classes!
 '''
 
 
@@ -25,20 +26,19 @@ fighter = {
     'FA': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     'XP': [0, 0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
            128e3, 256e3, 384e3, 512e3, 640e3],
-    'features': {
-        'Attack Rate': '1/1 from 1st to 6th level, 3/2 from 7th to 12th\n',
-        'Heroic Fighting':
-            'From 1st to 6th, double attacks per round against\n' +
-            'enemies with less than 2 HD. After 7th, applies\n' +
-            'for enemies with less than 3 HD.\n',
-        'Weapon Mastery':
-            'Choose two weapons. You have +1 to hit and damage \n' +
-            'and increased attack rate. Additional weapons may\n' +
-            'be mastered at 4th, 8th and 12th levels\n',
-        'Grand Mastery':
-            'At 4th level, gain an additional +1 attack/damage\n' +
-            'with an already mastered weapon.\n',
-    }
+    'features': '''
+*Attack Rate*
+1/1 from 1st to 6th level, 3/2 from 7th to 12th.
+
+*Heroic Fighting*
+From 1st to 6th, double attacks per round against enemies with less than
+2 HD. After 7th, applies for enemies with less than 3 HD.
+
+*Weapon Mastery*
+Choose two weapons. You have +1 to hit and damage and increased attack
+rate. Additional weapons may be mastered at 4th, 8th and 12th levels.
+Alternatively, a you may choose one particular previously-mastered weapon and
+achieve grand mastery for an additional +1 to hit and damage.'''
 }
 mage = {
     'HD': 4,
@@ -46,21 +46,16 @@ mage = {
     'FA': [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5],
     'XP': [0, 0, 2.5e3, 5e3, 10e3, 20e3, 40e3, 80e3,
            160e3, 320e3, 480e3, 640e3, 800e3],
-    'features': {
-        'Magician\'s Familiar':
-            'Summon a small animal (1d3+1 hp). The mage\n' +
-            'can see through its eyes as long as it is\n' +
-            'within 120 ft. If it dies, mage loses 1 hp\n' +
-            'per level.\n',
-        'Read Magic':
-            'Ability to decipher otherwise unintelligible magical\n' +
-            'inscriptions or symbols.\n',
-        'Scribe Scrolls':
-            'Ability to inscribe spells upon magical scrolls.\n' +
-            'Rquires 500 gp + 100 gp/spell level.\n',
-        'Sorcery': 'Ability to cast spells memorized from an arcane tome.\n',
-        'Alchemy': 'Ability to brew magical potions.\n'
-    }
+    'features': '''
+*Magician\'s Familiar*
+Summon a small animal (1d3+1 hp). You can see through its eyes as long as
+it is within 120 ft. If it dies, you lose 1 hp per level.
+
+*Sorcery*
+Ability to cast spells memorized from an arcane tome. You can also decipher
+otherwise unintelligible magical inscriptions or symbols, inscribe spells
+upon magical scrolls (requires 500 gp + 100 gp/spell level), and brew magical
+potions.'''
 }
 cleric = {
     'HD': 8,
@@ -68,14 +63,13 @@ cleric = {
     'FA': [0, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8],
     'XP': [0, 2e3, 4e3, 8e3, 16e3, 32e3, 64e3,
            128e3, 256e3, 384e3, 512e3, 640e3],
-    'features': {
-        'Read Scrolls': 'You can invoke cleric spells from scrolls.\n',
-        'Scribe Scrolls':
-            'You can write magical scrolls at a cost of 500 gp\n' +
-            '100 gp per spell level\n',
-        'Clerical Sorcery': 'Ability to cast clerical spells.\n',
-        'Turn Undead': 'Exert control over undead or demonic beings.\n',
-    }
+    'features': '''
+*Clerical Sorcery*
+Through prayer, you can invoke the power of your deity to perform miracles,
+inscribe spells upon holy scrolls (cost of 500 gp + 100 gp/spell level),
+
+*Turn Undead*
+Exert control over undead or demonic beings.'''
 }
 thief = {
     'HD': 6,
@@ -83,17 +77,20 @@ thief = {
     'FA': [0, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8],
     'XP': [0, 0, 1.5e3, 3e3, 6e3, 12e3, 24e3, 48e3,
            96e3, 192e3, 288e3, 384e3, 480e3],
-    'features': {
-        'Agile':
-            '-1 AC when unarmoured and unencumbered.\n',
-        'Backstab':
-            'An attack from behind with small melee weapon has a\n' +
-            'bonus to hit chance and damage.\n',
-        'Thieves\' Cant':
-            'You speak the secret language of criminals.\n',
-        'Thief Skills':
-            'Check out the table. There\'s some straight up ninja shit.\n',
-    }
+    'features': '''
+*Agile*
+-1 AC when unarmoured and unencumbered.
+
+*Backstab*
+Sneaky attacks have a bonus to hit probability and damage.
+
+*Thieves\' Cant*
+You speak the secret language of criminals.
+
+*Thief Skills*
+You are proficient in all manner of skullduggery, specifically: climbing,
+decipherment, careful listening, hiding, trap manipulation, moving silently,
+lock picking, pick pocketing, and reading magical scrolls.'''
 }
 
 classes = {'fighter': fighter, 'mage': mage, 'cleric': cleric, 'thief': thief}
@@ -112,9 +109,7 @@ def SecondarySkills():
               'Potter', 'Riverman', 'Thatcher', 'Roper', 'Sailor',
               'Scribe', 'Soldier', 'Stabler', 'Weaponsmith', 'Tailor',
               'Teamster', 'Tinker']
-    number_of_skills = len(skills)
-    index = d(number_of_skills)
-    return skills[index]
+    return choice(skills)
 
 
 def Equipage(abilities, cla):
@@ -249,6 +244,29 @@ def AbiPrinter(abilities):
     return output
 
 
+def FinalAbiPrinter(abilities, cla, level):
+    labels = [
+        'Strength:     ',
+        'Dexterity:    ',
+        'Constitution: ',
+        'Intelligence: ',
+        'Wisdom:       ',
+        'Charisma:     ',
+    ]
+    output = ''
+    output += ('\n')
+    classes = ['fighter', 'mage', 'cleric', 'thief']
+    primes = [0, 3, 4, 1]
+    prime = primes[classes.index(cla)]
+    for i in range(6):
+        supp = ''
+        if i == prime:
+            if abilities[i] > 15:
+                supp = r' +10% XP bonus'
+        output += labels[i] + ' ' + str(abilities[i]) + supp + '\n'
+    return output
+
+
 def AbiDialog():
     print 'Select your ability score generation method:'
     print '(3) 3d6--as Crom intended'
@@ -332,6 +350,49 @@ def MageSpells(level):
     return ', '.join(spells)
 
 
+def ClericSpells(level):
+    level1 = ['Bless', 'Bless Oil or Water', 'Ceremony of Consecration',
+              'Cold Resistance', 'Command', 'Create Water', 'Cure Light Wounds',
+              'Detect Evil', 'Detect Magic', 'Detect Malady', 'Light',
+              'Magic Stone', 'Omen', 'Perceive Disguise', 'Precipitate',
+              'Protection from Evil', 'Purify Food and Drink', 'Remove Fear',
+              'Sanctuary']
+    level2 = ['Aid', 'Augury', 'Cure Moderate Wounds', 'Darkness',
+              'Delay Poison', 'Detect Silence', 'Distinguish Alignment',
+              'Enthral', 'Find Traps', 'Fire Resistance', 'Hold Person',
+              'Incantation', 'Invisibility to Undead', 'Serpent Charm',
+              'Silence', 'Speak with Animals', 'Weird War Hammer',
+              'Wyvern Warden']
+    level3 = ['Animate Dead', 'Continuous Light', 'Create Food and Water',
+              'Cure Blindness', 'Cure Deafness', 'Cure Disease', 'Dispel Magic',
+              'Glyph of Warding', 'Locate Object', 'Magic Vestment',
+              'Meld into Stone', 'Prayer', 'Remove Curse', 'Remove Paralysis',
+              'Speak with Dead', 'Water Walk']
+    level4 = ['Brink of Death', 'Control Water', 'Cure Serious Wounds',
+              'Discern Lie', 'Divination', 'Imbue with Spell Ability',
+              'Neutralize Poison', 'Perform Exorcism',
+              'Protection from Evil 15 ft. radius', 'Scrying Font',
+              'Shroud of Fear', 'Speak with Plants', 'Spike Growth', 'Them',
+              'Tongues', 'Turn Sticks to Serpents']
+    level5 = ['Air Walk', 'Atonement', 'Commune', 'Cure Critical Wounds',
+              'Cure Madness', 'Dispel Evil', 'Finger of Death', 'Flame Strike',
+              'Inoculate', 'Insect Plague', 'Plane Shift', 'Quest',
+              'Raise Dead', 'True Seeing']
+    level6 = ['Animate Objects', 'Blade Barrier', 'Communicate with Monsters',
+              'Control Weather', 'Find the Path', 'Forbiddance', 'Heal',
+              'Heroes\' Feast', 'Restoration', 'Stone Tell',
+              'Summon Aerial Minion', 'Summon Animal I', 'Word of Recall']
+    spell_catalog = [level1, level2, level3, level4, level5, level6]
+    max_spell_progression = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]
+    spells = []
+    for j in range(level):
+        for i in range(3):
+            new_spell = choice(spell_catalog[max_spell_progression[j]])
+            spells.append(new_spell)
+            spell_catalog[max_spell_progression[j]].remove(new_spell)
+    return ', '.join(spells)
+
+
 if __name__ == '__main__':
     print '\nWelcome to ASSHtonishing PC Generation! \n'
 
@@ -362,13 +423,14 @@ if __name__ == '__main__':
         print >> f, 'Level', level, cla.upper()
         print >> f, '===================='
         print >> f, ''
-        print >> f, 'Abilities and Attributes'
-        print >> f, '------------------------'
+        print >> f, 'Attributes and Statistics'
+        print >> f, '-------------------------'
         print >> f, 'Hit Points:      ', hp
         print >> f, 'Armor Class:     ', ac
         print >> f, 'Damage Reduction:', dr
         print >> f, 'Fighting Ability:', classes[cla]['FA'][level]
-        print >> f, AbiPrinter(abilities)
+        print >> f, 'Experience      :', int(classes[cla]['XP'][level])
+        print >> f, FinalAbiPrinter(abilities, cla, level)
         print >> f, 'Saving Throw:', str(save)+',', classes[cla]['saves']
         print >> f, 'Background skill:', SecondarySkills()
         print >> f, ''
@@ -378,16 +440,18 @@ if __name__ == '__main__':
         print >> f, ''
         print >> f, 'Class Features:'
         print >> f, '---------------'
-        if type(classes[cla]['features']) is dict:
-            for power in classes[cla]['features'].keys():
-                print >> f, '*'+power+'*'
-                print >> f, classes[cla]['features'][power]
-        else:
-            for power in classes[cla]['features']:
-                print >> f, power
+        print >> f, classes[cla]['features']
         if cla == 'mage':
+            print >> f, ''
             print >> f, 'Spells:'
             print >> f, '-------'
             spells = MageSpells(level)
             print >> f, textwrap.fill(spells)
+        elif cla == 'cleric':
+            print >> f, ''
+            print >> f, 'Spells:'
+            print >> f, '-------'
+            spells = ClericSpells(level)
+            print >> f, textwrap.fill(spells)
+    print open('unnamed_hero.txt', 'r').read()
     print open('unnamed_hero.txt', 'r').read()

@@ -1,52 +1,42 @@
 
-Level 6 MAGE
+Level 3 CLERIC
 ====================
 
-Abilities and Attributes
-------------------------
-Hit Points:       29
-Armor Class:      9
-Damage Reduction: 0
+Attributes and Statistics
+-------------------------
+Hit Points:       13
+Armor Class:      3
+Damage Reduction: 1
 Fighting Ability: 2
+Experience      : 8000
 
-Strength:      16
-Dexterity:     13
-Constitution:  17
-Intelligence:  18
-Wisdom:        11
+Strength:      12
+Dexterity:     15
+Constitution:  15
+Intelligence:  13
+Wisdom:        16 +10% XP bonus
 Charisma:      14
 
-Saving Throw: 14, Device +2, Sorcery +2
-Background skill: Fisherman
+Saving Throw: 15, Death +2, Sorcery +2
+Background skill: Messenger
 
 Gear
 ----
-dagger, darts, torches (x3), backpack, wineskin, bandages, tinderbox,
-trail rations (1 week), 8 gp, spool of wire, crowbar, mask
+banded mail, spear, light crossbow (w/20 bolts), torches (x3),
+backpack, wineskin, bandages, tinderbox, trail rations (1 week), 12
+gp, horn, incendiary oil, glue
 
 Class Features:
 ---------------
-*Alchemy*
-Ability to brew magical potions.
 
-*Sorcery*
-Ability to cast spells memorized from an arcane tome.
+*Clerical Sorcery*
+Through prayer, you can invoke the power of your deity to perform miracles,
+inscribe spells upon holy scrolls (cost of 500 gp + 100 gp/spell level),
 
-*Magician's Familiar*
-Summon a small animal (1d3+1 hp). The mage
-can see through its eyes as long as it is
-within 120 ft. If it dies, mage loses 1 hp
-per level.
-
-*Scribe Scrolls*
-Ability to inscribe spells upon magical scrolls.
-Rquires 500 gp + 100 gp/spell level.
-
-*Read Magic*
-Ability to decipher otherwise unintelligible magical
-inscriptions or symbols.
+*Turn Undead*
+Exert control over undead or demonic beings.
 
 Spells:
 -------
-Hold Portal, Friends, Shove, Message, Stinking Cloud, Protection from
-Ordinary Missiles
+Serpent Charm, Enthral, Find Traps, Augury, Distinguish Alignment,
+Fire Resistance, Prayer, Remove Paralysis, Animate Dead
