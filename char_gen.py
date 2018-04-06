@@ -6,9 +6,10 @@ TODO:
 [X] Mage spells!!!
 [X] Cleric spells
 [X] Improve class feature printing
-[ ] Races
+[X] Races
 [X] XP bonus
 [ ] Attribute score modifiers
+[ ] Fully automatic character generation
 [ ] Add more classes!
 '''
 
@@ -97,18 +98,18 @@ classes = {'fighter': fighter, 'mage': mage, 'cleric': cleric, 'thief': thief}
 
 
 def SecondarySkills():
-    skills = ['Animal Trainer', 'Armorer', 'Cook', 'Barber', 'Inkeeper',
-              'Blacksmith', 'Shipwright', 'Bookbinder', 'Bowyer',
-              'Brewer', 'Vintner', 'Butcher', 'Carpenter', 'Cartwright',
-              'Chandler', 'Peatman', 'Clothier', 'Cobbler', 'Cooper',
-              'Engineer', 'Farmer', 'Fisherman', 'Furrier', 'Glazier',
-              'Jailer', 'Gardener', 'Jeweller', 'Grocer', 'Guard',
-              'Herdsman', 'Hunter', 'Tanner', 'Painter', 'Sculptor',
-              'Messenger', 'Locksmith', 'Logger', 'Mason', 'Merchant',
-              'Miller', 'Miner', 'Minstrel', 'Mortician', 'Navigator',
-              'Potter', 'Riverman', 'Thatcher', 'Roper', 'Sailor',
-              'Scribe', 'Soldier', 'Stabler', 'Weaponsmith', 'Tailor',
-              'Teamster', 'Tinker']
+    skills = ['animal trainer', 'armorer', 'cook', 'barber', 'inkeeper',
+              'blacksmith', 'shipwright', 'bookbinder', 'bowyer',
+              'brewer', 'vintner', 'butcher', 'carpenter', 'cartwright',
+              'chandler', 'peatman', 'clothier', 'cobbler', 'cooper',
+              'engineer', 'farmer', 'fisherman', 'furrier', 'glazier',
+              'jailer', 'gardener', 'jeweller', 'grocer', 'guard',
+              'herdsman', 'hunter', 'tanner', 'painter', 'sculptor',
+              'messenger', 'locksmith', 'logger', 'mason', 'merchant',
+              'miller', 'miner', 'minstrel', 'mortician', 'navigator',
+              'potter', 'riverman', 'thatcher', 'roper', 'sailor',
+              'scribe', 'soldier', 'stabler', 'weaponsmith', 'tailor',
+              'teamster', 'tinker']
     return choice(skills)
 
 
@@ -244,27 +245,41 @@ def AbiPrinter(abilities):
     return output
 
 
-def FinalAbiPrinter(abilities, cla, level):
-    labels = [
-        'Strength:     ',
-        'Dexterity:    ',
-        'Constitution: ',
-        'Intelligence: ',
-        'Wisdom:       ',
-        'Charisma:     ',
-    ]
-    output = ''
-    output += ('\n')
-    classes = ['fighter', 'mage', 'cleric', 'thief']
-    primes = [0, 3, 4, 1]
-    prime = primes[classes.index(cla)]
-    for i in range(6):
-        supp = ''
-        if i == prime:
-            if abilities[i] > 15:
-                supp = r' +10% XP bonus'
-        output += labels[i] + ' ' + str(abilities[i]) + supp + '\n'
-    return output
+# def FinalAbiPrinter(abilities, cla, level):
+#     labels = [
+#         'Strength:     ',
+#         'Dexterity:    ',
+#         'Constitution: ',
+#         'Intelligence: ',
+#         'Wisdom:       ',
+#         'Charisma:     ',
+#     ]
+#     output = ''
+#     output += ('\n')
+#     atk = [-2, -1, 0, 0, 0, 1, 1, 2]
+#     dmg = [-2, -1, -1, 0, 1, 1, 2, 3]
+#     mis = dmg
+#     dodge = atk
+#     hp_adj = [-1, -1, 0, 0, 1, 1, 2, 3]
+#     trauma = [0.45, 0.55, 0.65, 0.75, 0.8, 0.85, 0.9, 0.95]
+#     lang = ['Illiterate', 'Illiterate', '', '', '1', '1', '2', '3']
+#     bonus_spell_lvl = ['', '', '', '', '1', '2', '3', '4']
+#     learn = [0, 0, 0, 0.5, 0.65, 0.75, 0.85, 0.95]
+#     loyal = [-3, -2, -1, 0, 1, 1, 2, 3]
+#     hench = [1, 2, 3, 4, 6, 8, 10, 12]
+#     turn = [-1, -1, 0, 0, 0, 1, 1, 1]
+#     classes = ['fighter', 'mage', 'cleric', 'thief']
+#     primes = [0, 3, 4, 1]
+#     prime = primes[classes.index(cla)]
+#     for i in range(6):
+#         score = abilities[i]
+#         score_ind = [0, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 6, 7]
+#         supp = ''
+#         if i == prime:
+#             if abilities[i] > 15:
+#                 supp = r' +10% XP bonus'
+#         output += labels[i] + ' ' + str(score) + supp + '\n'
+#     return output
 
 
 def AbiDialog():
@@ -393,6 +408,17 @@ def ClericSpells(level):
     return ', '.join(spells)
 
 
+def GetRace():
+    races = ['Atlantean', 'Amazon', 'Amazon', 'Amazon', 'Esquimaux',
+             'Esquimaux', 'Kelt', 'Kelt', 'Kimmeri-Kelt', 'Kimmerian', 'Common',
+             'Common', 'Common', 'Ixian', 'Viking', 'Viking', 'Pict', 'Pict',
+             'Half-Blood Pict', 'Half-Blood Pict', 'Half-Blood Pict',
+             'Half-Blood Pict', 'Hyperborean']
+    roll = d(12) + d(12)
+    race = races[roll-2]
+    return race
+
+
 if __name__ == '__main__':
     print '\nWelcome to ASSHtonishing PC Generation! \n'
 
@@ -430,9 +456,9 @@ if __name__ == '__main__':
         print >> f, 'Damage Reduction:', dr
         print >> f, 'Fighting Ability:', classes[cla]['FA'][level]
         print >> f, 'Experience      :', int(classes[cla]['XP'][level])
-        print >> f, FinalAbiPrinter(abilities, cla, level)
+        print >> f, AbiPrinter(abilities)
         print >> f, 'Saving Throw:', str(save)+',', classes[cla]['saves']
-        print >> f, 'Background skill:', SecondarySkills()
+        print >> f, 'Background:', GetRace(), SecondarySkills()
         print >> f, ''
         print >> f, 'Gear'
         print >> f, '----'

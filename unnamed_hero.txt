@@ -4,27 +4,27 @@ Level 3 CLERIC
 
 Attributes and Statistics
 -------------------------
-Hit Points:       13
-Armor Class:      3
+Hit Points:       14
+Armor Class:      6
 Damage Reduction: 1
 Fighting Ability: 2
 Experience      : 8000
 
-Strength:      12
-Dexterity:     15
-Constitution:  15
-Intelligence:  13
-Wisdom:        16 +10% XP bonus
-Charisma:      14
+Strength:      13
+Dexterity:     13
+Constitution:  11
+Intelligence:  10
+Wisdom:        14
+Charisma:      11
 
 Saving Throw: 15, Death +2, Sorcery +2
-Background skill: Messenger
+Background: Common cartwright
 
 Gear
 ----
-banded mail, spear, light crossbow (w/20 bolts), torches (x3),
-backpack, wineskin, bandages, tinderbox, trail rations (1 week), 12
-gp, horn, incendiary oil, glue
+scale, scimitar, light crossbow (w/20 bolts), torches (x3), backpack,
+wineskin, bandages, tinderbox, trail rations (1 week), 6 gp, ink and
+quill, collapsable 10-ft pole, wooden stakes (x4)
 
 Class Features:
 ---------------
@@ -38,5 +38,6 @@ Exert control over undead or demonic beings.
 
 Spells:
 -------
-Serpent Charm, Enthral, Find Traps, Augury, Distinguish Alignment,
-Fire Resistance, Prayer, Remove Paralysis, Animate Dead
+Detect Silence, Darkness, Serpent Charm, Incantation, Enthral,
+Invisibility to Undead, Continuous Light, Dispel Magic, Meld into
+Stone
