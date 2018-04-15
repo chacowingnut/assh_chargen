@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AbiDialog	char_gen.py	/^def AbiDialog():$/;"	f
+AbiPrinter	char_gen.py	/^def AbiPrinter(abilities):$/;"	f
+AbiRoller	dice_things.py	/^def AbiRoller(n):$/;"	f
+AvailableClasses	char_gen.py	/^def AvailableClasses(abilities):$/;"	f
+ClericSpells	char_gen.py	/^def ClericSpells(level):$/;"	f
+Equipage	char_gen.py	/^def Equipage(abilities, cla):$/;"	f
+GainHP	char_gen.py	/^def GainHP(abilities, level, hd):$/;"	f
+GetRace	char_gen.py	/^def GetRace():$/;"	f
+MageSpells	char_gen.py	/^def MageSpells(level):$/;"	f
+SecondarySkills	char_gen.py	/^def SecondarySkills():$/;"	f
+abilities	char_gen.py	/^        abilities = AbiDialog()$/;"	v
+ability_generation	char_gen.py	/^            ability_generation = False$/;"	v
+ability_generation	char_gen.py	/^    ability_generation = True$/;"	v
+available	char_gen.py	/^    available = AvailableClasses(abilities)$/;"	v
+choosing_class	char_gen.py	/^            choosing_class = False$/;"	v
+choosing_class	char_gen.py	/^    choosing_class = True$/;"	v
+cla	char_gen.py	/^        cla = raw_input('\\nWhich do you choose?\\n>').lower()$/;"	v
+classes	char_gen.py	/^classes = {'fighter': fighter, 'mage': mage, 'cleric': cleric, 'thief': thief}$/;"	v
+cleric	char_gen.py	/^cleric = {$/;"	v
+cool	char_gen.py	/^        cool = raw_input('Are these to your liking? (y\/n) \\n>')$/;"	v
+d	dice_things.py	/^def d(sides):$/;"	f
+fighter	char_gen.py	/^fighter = {$/;"	v
+hp	char_gen.py	/^    hp = GainHP(abilities, level, classes[cla]['HD'])$/;"	v
+level	char_gen.py	/^    level = int(raw_input('\\nAt what level will you start?\\n>'))$/;"	v
+mage	char_gen.py	/^mage = {$/;"	v
+save	char_gen.py	/^    save = saving_throws[level]$/;"	v
+saving_throws	char_gen.py	/^saving_throws = [0, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11]$/;"	v
+spells	char_gen.py	/^            spells = ClericSpells(level)$/;"	v
+spells	char_gen.py	/^            spells = MageSpells(level)$/;"	v
+thief	char_gen.py	/^thief = {$/;"	v

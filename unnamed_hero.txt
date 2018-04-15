@@ -1,30 +1,29 @@
 
-Level 3 CLERIC
+Level 5 CLERIC
 ====================
 
 Attributes and Statistics
 -------------------------
-Hit Points:       14
-Armor Class:      6
+Hit Points:       20
+Armor Class:      4
 Damage Reduction: 1
-Fighting Ability: 2
-Experience      : 8000
+Fighting Ability: 3
+Experience      : 32000
 
-Strength:      13
-Dexterity:     13
-Constitution:  11
-Intelligence:  10
-Wisdom:        14
-Charisma:      11
+Strength:      10
+Dexterity:     10
+Constitution:  14
+Intelligence:  9
+Wisdom:        15
+Charisma:      7
 
-Saving Throw: 15, Death +2, Sorcery +2
-Background: Common cartwright
+Saving Throw: 14, Death +2, Sorcery +2
+Background: Pict hunter
 
 Gear
 ----
-scale, scimitar, light crossbow (w/20 bolts), torches (x3), backpack,
-wineskin, bandages, tinderbox, trail rations (1 week), 6 gp, ink and
-quill, collapsable 10-ft pole, wooden stakes (x4)
+splint, longsword, sling, torches (x3), backpack, wineskin, bandages,
+tinderbox, trail rations (1 week), 3 gp, mask, horn, chalk
 
 Class Features:
 ---------------
@@ -38,6 +37,7 @@ Exert control over undead or demonic beings.
 
 Spells:
 -------
-Detect Silence, Darkness, Serpent Charm, Incantation, Enthral,
-Invisibility to Undead, Continuous Light, Dispel Magic, Meld into
-Stone
+Enthral, Darkness, Incantation, Delay Poison, Invisibility to Undead,
+Weird War Hammer, Water Walk, Animate Dead, Locate Object, Meld into
+Stone, Remove Paralysis, Speak with Dead, Scrying Font, Imbue with
+Spell Ability, Spike Growth
