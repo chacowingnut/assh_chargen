@@ -1,0 +1,13 @@
+*Agile*
+-1 AC when unarmoured and unencumbered.
+
+*Backstab*
+Sneaky attacks have a bonus to hit probability and damage.
+
+*Thieves' Cant*
+You speak the secret language of criminals.
+
+*Thief Skills*
+You are proficient in all manner of skullduggery, specifically: climbing,
+decipherment, careful listening, hiding, trap manipulation, moving silently,
+lock picking, pick pocketing, and reading magical scrolls.

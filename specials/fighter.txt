@@ -1,0 +1,12 @@
+*Attack Rate*
+1/1 from 1st to 6th level, 3/2 from 7th to 12th.
+
+*Heroic Fighting*
+From 1st to 6th, double attacks per round against enemies with less than
+2 HD. After 7th, applies for enemies with less than 3 HD.
+
+*Weapon Mastery*
+Choose two weapons. You have +1 to hit and damage and increased attack
+rate. Additional weapons may be mastered at 4th, 8th and 12th levels.
+Alternatively, a you may choose one particular previously-mastered weapon and
+achieve grand mastery for an additional +1 to hit and damage.

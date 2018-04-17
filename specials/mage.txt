@@ -1,0 +1,9 @@
+*Magician's Familiar*
+Summon a small animal (1d3+1 hp). You can see through its eyes as long as
+it is within 120 ft. If it dies, you lose 1 hp per level.
+
+*Sorcery*
+Ability to cast spells memorized from an arcane tome. You can also decipher
+otherwise unintelligible magical inscriptions or symbols, inscribe spells
+upon magical scrolls (requires 500 gp + 100 gp/spell level), and brew magical
+potions.

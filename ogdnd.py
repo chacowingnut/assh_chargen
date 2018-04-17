@@ -21,9 +21,12 @@ class Character(object):
     def Weight(self):
         return 0
 
+
 class Thief(Character):
     level = Character.xp + 1
     hd = 'd6'
+    with open('specials/thief.txt', 'r') as f:
+        specials = f.read()
 
     def GainHP(self):
         Character.hp = Character.hp + random.randint(1, int(self.hd[1:]))
@@ -33,9 +36,6 @@ class Thief(Character):
 
     def Thac0(self):
         return 20
-
-    def Specials(self):
-        return ''
 
 
 def GetBonus(score):
