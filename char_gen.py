@@ -402,9 +402,9 @@ def ClericSpells(level):
     spells = []
     for j in range(level):
         for i in range(3):
-            new_spell = choice(spell_catalog[max_spell_progression[j]])
+            new_spell = choice(spell_catalog[max_spell_progression[j]-1])
             spells.append(new_spell)
-            spell_catalog[max_spell_progression[j]].remove(new_spell)
+            spell_catalog[max_spell_progression[j]-1].remove(new_spell)
     return ', '.join(spells)
 
 
