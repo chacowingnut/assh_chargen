@@ -29,8 +29,10 @@ fighter	char_gen.py	/^fighter = {$/;"	v
 hp	char_gen.py	/^    hp = GainHP(abilities, level, classes[cla]['HD'])$/;"	v
 level	char_gen.py	/^    level = int(raw_input('\\nAt what level will you start?\\n>'))$/;"	v
 mage	char_gen.py	/^mage = {$/;"	v
+project_opened	.ropeproject/config.py	/^def project_opened(project):$/;"	f
 save	char_gen.py	/^    save = saving_throws[level]$/;"	v
 saving_throws	char_gen.py	/^saving_throws = [0, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11]$/;"	v
+set_prefs	.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f
 spells	char_gen.py	/^            spells = ClericSpells(level)$/;"	v
 spells	char_gen.py	/^            spells = MageSpells(level)$/;"	v
 thief	char_gen.py	/^thief = {$/;"	v
