@@ -1,29 +1,30 @@
 
-Level 5 CLERIC
+Level 1 CLERIC
 ====================
 
 Attributes and Statistics
 -------------------------
-Hit Points:       20
-Armor Class:      4
+Hit Points:       7
+Armor Class:      5
 Damage Reduction: 1
-Fighting Ability: 3
-Experience      : 32000
+Fighting Ability: 1
+Experience      : 2000
 
-Strength:      10
-Dexterity:     10
-Constitution:  14
-Intelligence:  9
-Wisdom:        15
-Charisma:      7
+Strength:      7
+Dexterity:     6
+Constitution:  8
+Intelligence:  12
+Wisdom:        9
+Charisma:      10
 
-Saving Throw: 14, Death +2, Sorcery +2
-Background: Pict hunter
+Saving Throw: 16, Death +2, Sorcery +2
+Background: Half-Blood Pict guard
 
 Gear
 ----
-splint, longsword, sling, torches (x3), backpack, wineskin, bandages,
-tinderbox, trail rations (1 week), 3 gp, mask, horn, chalk
+splint, warhammer, bola, lamp (w/full flask of oil), backpack,
+wineskin, bandages, tinderbox, trail rations (1 week), 18 gp, crowbar,
+needle and thread, incendiary oil
 
 Class Features:
 ---------------
@@ -37,7 +38,4 @@ Exert control over undead or demonic beings.
 
 Spells:
 -------
-Enthral, Darkness, Incantation, Delay Poison, Invisibility to Undead,
-Weird War Hammer, Water Walk, Animate Dead, Locate Object, Meld into
-Stone, Remove Paralysis, Speak with Dead, Scrying Font, Imbue with
-Spell Ability, Spike Growth
+Hold Person, Wyvern Warden, Darkness
