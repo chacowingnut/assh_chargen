@@ -1,41 +1,44 @@
 
-Level 1 CLERIC
+Level 2 THIEF
 ====================
 
 Attributes and Statistics
 -------------------------
 Hit Points:       7
-Armor Class:      5
-Damage Reduction: 1
+Armor Class:      7
+Damage Reduction: 0
 Fighting Ability: 1
-Experience      : 2000
+Experience      : 1500
 
-Strength:      7
-Dexterity:     6
-Constitution:  8
-Intelligence:  12
-Wisdom:        9
-Charisma:      10
+Strength:      11
+Dexterity:     13
+Constitution:  9
+Intelligence:  9
+Wisdom:        7
+Charisma:      17
 
-Saving Throw: 16, Death +2, Sorcery +2
-Background: Half-Blood Pict guard
+Saving Throw: 16, Device +2, Avoidance +2
+Background: Viking messenger
 
 Gear
 ----
-splint, warhammer, bola, lamp (w/full flask of oil), backpack,
-wineskin, bandages, tinderbox, trail rations (1 week), 18 gp, crowbar,
-needle and thread, incendiary oil
+leather, light hammer, shortbow (w/20 arrows), torches (x3), backpack,
+wineskin, bandages, tinderbox, trail rations (1 week), 16 gp, fishing
+net, horn, incendiary oil
 
 Class Features:
 ---------------
 
-*Clerical Sorcery*
-Through prayer, you can invoke the power of your deity to perform miracles,
-inscribe spells upon holy scrolls (cost of 500 gp + 100 gp/spell level),
+*Agile*
+-1 AC when unarmoured and unencumbered.
 
-*Turn Undead*
-Exert control over undead or demonic beings.
+*Backstab*
+Sneaky attacks have a bonus to hit probability and damage.
 
-Spells:
--------
-Hold Person, Wyvern Warden, Darkness
+*Thieves' Cant*
+You speak the secret language of criminals.
+
+*Thief Skills*
+You are proficient in all manner of skullduggery, specifically: climbing,
+decipherment, careful listening, hiding, trap manipulation, moving silently,
+lock picking, pick pocketing, and reading magical scrolls.
