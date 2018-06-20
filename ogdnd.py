@@ -114,3 +114,6 @@ if __name__ == '__main__':
     fondag.attr = GenAttributes(3)
     fondag.GainLevel()
     PrintChar(fondag)
+    fondag.xp = 1600
+    fondag.GainLevel()
+    PrintChar(fondag)
