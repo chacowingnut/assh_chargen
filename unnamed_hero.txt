@@ -1,30 +1,30 @@
 
-Level 2 THIEF
+Level 6 THIEF
 ====================
 
 Attributes and Statistics
 -------------------------
-Hit Points:       7
-Armor Class:      7
+Hit Points:       23
+Armor Class:      8
 Damage Reduction: 0
-Fighting Ability: 1
-Experience      : 1500
+Fighting Ability: 4
+Experience      : 24000
 
-Strength:      11
-Dexterity:     13
-Constitution:  9
-Intelligence:  9
-Wisdom:        7
-Charisma:      17
+Strength:      13
+Dexterity:     12
+Constitution:  11
+Intelligence:  13
+Wisdom:        12
+Charisma:      11
 
-Saving Throw: 16, Device +2, Avoidance +2
-Background: Viking messenger
+Saving Throw: 14, Device +2, Avoidance +2
+Background: Common bookbinder
 
 Gear
 ----
-leather, light hammer, shortbow (w/20 arrows), torches (x3), backpack,
-wineskin, bandages, tinderbox, trail rations (1 week), 16 gp, fishing
-net, horn, incendiary oil
+padded, dagger, darts, lamp (w/full flask of oil), backpack, wineskin,
+bandages, tinderbox, trail rations (1 week), 6 gp, spool of wire,
+block of beeswax, marbles
 
 Class Features:
 ---------------

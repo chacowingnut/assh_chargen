@@ -194,7 +194,6 @@ def Equipage(abilities, cla):
 
 
 def GainHP(abilities, level, hd):
-    hp = 0
     con = abilities[2]
     if con < 7:
         adj = -1
@@ -206,9 +205,10 @@ def GainHP(abilities, level, hd):
         adj = 2
     else:
         adj = 3
-    for i in xrange(level):
-        hp += d(hd) + adj
-
+    hp = hd + adj
+    if level > 1:
+        for i in xrange(level-1):
+            hp += d(hd) + adj
     return hp
 
 
