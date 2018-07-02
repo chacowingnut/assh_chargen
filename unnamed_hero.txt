@@ -1,44 +1,43 @@
 
-Level 6 THIEF
+Level 1 MAGE
 ====================
 
 Attributes and Statistics
 -------------------------
-Hit Points:       23
-Armor Class:      8
+Hit Points:       4
+Armor Class:      10
 Damage Reduction: 0
-Fighting Ability: 4
-Experience      : 24000
+Fighting Ability: 0
+Experience      : 0
 
-Strength:      13
-Dexterity:     12
-Constitution:  11
-Intelligence:  13
+Strength:      12
+Dexterity:     6
+Constitution:  9
+Intelligence:  10
 Wisdom:        12
-Charisma:      11
+Charisma:      13
 
-Saving Throw: 14, Device +2, Avoidance +2
-Background: Common bookbinder
+Saving Throw: 16, Device +2, Sorcery +2
+Background: Common mason
 
 Gear
 ----
-padded, dagger, darts, lamp (w/full flask of oil), backpack, wineskin,
-bandages, tinderbox, trail rations (1 week), 6 gp, spool of wire,
-block of beeswax, marbles
+dagger, darts, torches (x3), backpack, wineskin, bandages, tinderbox,
+trail rations (1 week), 9 gp, soap, block of beeswax, spool of wire
 
 Class Features:
 ---------------
 
-*Agile*
--1 AC when unarmoured and unencumbered.
+*Magician's Familiar*
+Summon a small animal (1d3+1 hp). You can see through its eyes as long as
+it is within 120 ft. If it dies, you lose 1 hp per level.
 
-*Backstab*
-Sneaky attacks have a bonus to hit probability and damage.
+*Sorcery*
+Ability to cast spells memorized from an arcane tome. You can also decipher
+otherwise unintelligible magical inscriptions or symbols, inscribe spells
+upon magical scrolls (requires 500 gp + 100 gp/spell level), and brew magical
+potions.
 
-*Thieves' Cant*
-You speak the secret language of criminals.
-
-*Thief Skills*
-You are proficient in all manner of skullduggery, specifically: climbing,
-decipherment, careful listening, hiding, trap manipulation, moving silently,
-lock picking, pick pocketing, and reading magical scrolls.
+Spells:
+-------
+Magic Missile, Spider Climb, Burning Hands, Identify
